@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getAllArticles, getArticleBySlug } from '@/lib/articles'
+import AdSlot from '@/components/AdSlot'
 
 export async function generateStaticParams() {
   return getAllArticles().map(article => ({ slug: article.slug }))
@@ -101,7 +102,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
         <div className="container" style={{ maxWidth: '720px' }}>
           {/* Ad */}
-          <div className="ad-slot" style={{ marginTop: '1.5rem' }}>広告スペース</div>
+          <AdSlot />
 
           {/* Content */}
           <div
@@ -117,7 +118,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           />
 
           {/* Ad */}
-          <div className="ad-slot">広告スペース</div>
+          <AdSlot variant="inline" />
 
           {/* Share */}
           <div style={{

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllArticles } from '@/lib/articles'
+import AdSlot from '@/components/AdSlot'
 
 export const metadata: Metadata = {
   title: 'AIツール通信 | 最新AIツールのレビュー・比較・ニュース',
@@ -146,7 +147,7 @@ export default function Home() {
         )}
 
         {/* Ad */}
-        <div className="ad-slot">広告スペース</div>
+        <AdSlot />
 
         {/* Article Grid */}
         <section>
