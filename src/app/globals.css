@@ -1,0 +1,233 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #F4F4F5;
+  --bg-card: #FFFFFF;
+  --text-primary: #09090B;
+  --text-secondary: #3F3F46;
+  --text-muted: #A1A1AA;
+  --border: #E4E4E7;
+  --accent: #18181B;
+  --accent-hover: #27272A;
+  --accent-pink: #EC4899;
+  --tag-bg: #F4F4F5;
+  --tag-text: #18181B;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Noto Sans JP', sans-serif;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-pink);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.container-wide {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Card component */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+/* Tag */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  letter-spacing: 0.01em;
+}
+
+/* Category badge */
+.cat-news { background: #FEF2F2; color: #DC2626; }
+.cat-review { background: #EFF6FF; color: #2563EB; }
+.cat-compare { background: #F5F3FF; color: #7C3AED; }
+.cat-tutorial { background: #ECFDF5; color: #059669; }
+
+/* Article prose */
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-pink);
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+}
+
+.prose p {
+  margin: 1.25rem 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.prose ul, .prose ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.prose li {
+  margin: 0.5rem 0;
+}
+
+.prose strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--accent-pink);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background: var(--bg-secondary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+}
+
+.prose code {
+  background: #F4F4F5;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.prose pre {
+  background: #18181B;
+  color: #E4E4E7;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.875em;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.prose a {
+  color: var(--accent-pink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Ad slot */
+.ad-slot {
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+/* Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: white;
+}
+
+.btn-pink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent-pink);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-pink:hover {
+  background: #DB2777;
+  color: white;
+}
+
+/* Divider */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--accent-pink);
+  border-radius: 2px;
+}
